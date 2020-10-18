@@ -1,0 +1,44 @@
+.bf{background-color:#26cca8;color:white;} 
+    .details tr:nth-child(2n) {
+background:#f1fff1; 
+-webkit-transition:all 100ms ease;
+   -moz-transition:all 100ms ease;
+     -o-transition:all 100ms ease;
+        transition:all 100ms ease;
+}
+body {
+  margin:0;
+  font-family:'Open Sans', sans-serif;
+  color:#444444;
+  font-size:16px;
+  background: url('../../assets/blur-abstract-background-260nw-742715635.webp') no-repeat center/cover;
+  height: 100vh;
+  padding-top: 50px;
+  
+}
+#navbar {
+    display: flex;
+    position: sticky;
+    top:0;
+    background: #333;
+    color: #fff;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 1rem;
+  }
+#navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  
+  #navbar ul li a {
+    color: #fff;
+    padding: 0.75rem;
+    margin: 0 0.25rem;
+  }
+  
+  #navbar ul li a:hover {
+    background: #93cb52;
+    border-radius: 5px;
+  }

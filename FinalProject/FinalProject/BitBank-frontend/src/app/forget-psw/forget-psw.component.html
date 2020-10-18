@@ -1,0 +1,29 @@
+
+    <div class="wrapper">
+      <div class="title">
+Forgot Password?</div>
+<form action="#">
+  <div class="field">
+    <input type="text" required>
+    <label>Enter User Id</label>
+  </div>
+        <div class="field">
+          <input type="text" required>
+          <label>Enter OTP</label>
+        </div>
+    
+        <p>{{otp}}</p>
+        <div class="field-submit">
+                <button type="submit" value="Proceed" (click)="submitted()">Proceed</button>
+              </div>   
+    
+    <div class="field">
+              <input type="button"value="Back" (click)="btnClick()" >
+            </div>
+            <div class="field">
+              <input type="button" (click)="myFunction()" value="Send OTP">
+            </div>   
+    
+</form>
+</div>
+

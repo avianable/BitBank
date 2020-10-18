@@ -1,0 +1,91 @@
+#navbar {
+  display: flex;
+  position: sticky;
+  top:0;
+  background: #333;
+  color: #fff;
+  justify-content: space-between;
+  z-index: 1;
+  padding: 1rem;
+}
+
+#navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+#navbar ul li a {
+  color: #fff;
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+}
+
+#navbar ul li a:hover {
+  background: #93cb52;
+  border-radius: 5px;
+}
+
+body{
+  background: url('../../assets/blur-abstract-background-260nw-742715635.webp') no-repeat center/cover ;
+  height: 110vh;
+  
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+
+  .col-sm-4 i{
+      size: 20px;
+  }
+  
+  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+  .row.content {height: 650px}
+  
+  /* Set gray background color and 100% height */
+  .sidenav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f1f1f1;
+    height: 94vh;
+  }
+  
+  /* Set black background color, white text and some padding */
+  footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+  }
+  
+  /* On small screens, set height to 'auto' for sidenav and grid */
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
+  }
+
+  .list-group-item li{
+      padding: 10px 10px;
+  }
+  .col-sm-4 {
+    padding: 30px 30px 30px 30px;
+    padding-left: 220px;
+    height: 100vh;
+  }
+  .col-sm-4 a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    
+  }
+  .navbar-brand{
+    color: #93cb52;
+  }
+
+  .collapse  .nav li:hover{
+    color: #93cb52;
+  }

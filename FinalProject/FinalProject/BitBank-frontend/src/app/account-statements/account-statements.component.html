@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Account Statement</title>
+</head>
+<body>
+  <nav id="navbar">
+    <h2 class="logo" >
+      <span style="color: #93bc52;" >
+        <i class="fas fa-university"> BitBank</i>
+      </span>
+      </h2>
+      <ul>
+        <li><a [routerLink]='["/dashboard2"]' style="text-decoration: none;">Dashboard</a></li>
+        
+        <li><a [routerLink]='["/home"]' style="text-decoration: none;">Logout</a></li>
+        
+        
+        
+      </ul>
+  </nav>
+
+<div class="container">
+  <header style="padding-top:100px ;">
+    <strong><span>Available Balance: &#x20b9;</span><span>{{customer.accountBalance}}</span></strong><br><br>
+    <div>
+        <span style="font-size: 2em;"> Transaction History</span>
+        <span class="from">
+        
+      </span>
+      <span class="to">
+        
+        
+      </span>
+      <br><br>
+    </div>
+    
+  </header>
+  <div class="wrapper">
+    <table>
+      <thead>
+        <tr style="text-align: center;" >
+          <th class="date"><div>Date</div> (dd/mm/yyyy)</th>
+          <th class="transaction"><div>Transaction</div> Amount ( &#x20b9; ) </th>
+          <th class="transactiontype">Transaction Type</th>
+          <th class="details">Details</th>
+          <th class="trnsaction id">Transaction Id</th>
+          <th class="amount">Balance</th>
+         
+
+      </thead>
+      <tbody id="transData">
+        <tr *ngFor="let txn of accTxnList;">
+          <td class="date"><span class="fontawesome-calendar">{{txn.transactionDate}}</span></td>
+          <td class="transaction"><span class="fontawesome-money"> &#x20b9; {{txn.txnAmount}} </span></td>
+          <td class="amount"><span class="fontawesome-money"> &#x20b9; {{txn.transactionType}} </span></td>
+          <td class="details"><span class="fontawesome-map-marker">{{txn.detail}}</span></td>
+          <td class="transaction id"><span class="fontawesome-wrench">{{txn.transactionId}}</span></td>
+          <td class="amount"><span class="fontawesome-money"> &#x20b9; {{txn.balance}} </span></td>
+          
+        </tr> 
+      </tbody>
+    </table>
+  </div>
+</div>
+  
+</body>
+</html>

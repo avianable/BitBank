@@ -1,0 +1,123 @@
+<body >
+<nav id="navbar">
+    <h2 class="logo" >
+      <span style="color: #93bc52;" >
+        <i class="fas fa-university"> BitBank</i>
+      </span>
+      </h2>
+      <ul>
+        <li><a [routerLink]='["/dashboard2"]' style="text-decoration: none;">Dashboard</a></li>
+        
+        <li><a [routerLink]='["/home"]' style="text-decoration: none;">Logout</a></li>
+        
+        
+        
+      </ul>
+  </nav>
+
+
+  
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+        <div class="card" style="margin:20px;"><div class="card-header bf" >
+      Is someone missing in your list?
+    </div>
+    <div class="card-body">
+      <p class="card-text">Is someone missing in your list?</p>
+      <hr>
+      <a [routerLink]='["/addbeneficiary"]' class="btn bf">Add new Beneficiary</a>      
+    </div>
+  </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card" style="margin:20px;"><div class="card-header bf" >
+  Send money ( Do a quick transfer to other bank accounts)
+</div>
+<div class="card-body">
+  <p class="card-text">
+    Just some information and you are done!
+    <span class="alert-danger" *ngIf="accountNumber.touched && accountNumber.invalid">Enter correct account number.</span>
+    <span class="alert-danger" *ngIf="amount.touched && amount.invalid">Enter correct amount</span>
+
+  </p>
+  <hr>
+  
+  <form (ngSubmit)='sendmoneytoaccount()' #sendMoneyForm="ngForm">
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+        <input type="text" class="form-control mb-2" id="accountNumber" placeholder="Enter Account Number" [(ngModel)]=senderaccountNumber [ngModelOptions]="{standalone: true}" pattern="[0-9]{5,}" #accountNumber="ngModel">
+      </div>
+      <div class="col-auto">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">₹</div>
+          </div>
+          <input type="text" class="form-control" id="amount"  placeholder="Enter amount" [(ngModel)]=accountTxn.txnAmount [ngModelOptions]="{standalone: true}" pattern="[0-9]{1,}" #amount="ngModel">
+        </div>
+      </div>
+      
+      <div class="col-auto">
+        <button type="submit" class="btn  bf" [disabled]="!sendMoneyForm.valid">Send Money</button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+  <!-- <div class="card" style="margin:20px;">
+    <div class="card-body">
+      <p class="card-text">Is someone missing in your list?</p>
+      <a [routerLink]='["/addbeneficiary"]' class="btn bf" >Add new Beneficiary</a>
+    </div>
+  </div> -->
+  
+<br>
+<div class="table-responsive" style="width:80%;margin:auto;">
+  <table class="table table-sm table-hover">
+    <thead class="bf">
+      <tr>
+        <th scope="col">Beneficiary Name</th>
+        <th scope="col">Account Number</th>
+        <th scope="col">Bank Name</th>
+        <th scope="col">BRANCH</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let benef of testBenefList;">
+        <td style="font-weight: 500; " class="btn "> <a (click)="send(benef.benefAccountNumber)">{{benef.firstName}}  {{benef.lastName}}</a></td>
+        <td style="font-weight: 500; ">{{benef.benefAccountNumber}}</td>
+        <td style="font-weight: 500; ">{{benef.bank}}</td>
+        <td style="font-weight: 500; ">{{benef.branch}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+
+  
+
+</div>
+
+<!-- <div style="width: 30%; padding-left: 300px;">
+
+  <h5 >Send money to account</h5>
+  <form (ngSubmit)='sendmoneytoaccount()'>
+    <label>Enter Account Number</label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="Enter Account Number" [(ngModel)]=senderaccountNumber [ngModelOptions]="{standalone: true}">
+    <label>Enter Amount</label>
+    {{message}}
+    <input type="number" class="form-control" id="inputPassword4"  placeholder="Enter amount" [(ngModel)]=accountTxn.txnAmount [ngModelOptions]="{standalone: true}">
+  
+  <button type="submit" style="margin:10px;"  class="btn bf">Send Money</button>
+  <a href="#" class="btn bf">Edit</a>
+</form>
+</div>
+
+<br> -->
+
+

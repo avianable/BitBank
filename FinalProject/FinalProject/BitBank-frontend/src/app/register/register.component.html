@@ -1,0 +1,169 @@
+<body><nav id="navbar">
+    <div>
+    <h3 style="font-weight: bold;"><i class="fas fa-university fa-1x" style="color: #93cb52; padding-top: 10px;"></i>&nbsp; BitBank</h3> 
+ </div>
+ 
+    <ul style="text-decoration: none;">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#contact">Login</a></li>
+      <li><a href="#what">Apply Online!</a></li>
+      
+      
+    </ul>
+  </nav>
+<div class="signup-form" >
+
+  <form *ngIf="flag" (ngSubmit)="sendOTP()" name="form1"  class="form-detail" #addCustForm="ngForm">
+      <h2 style="text-align: center;">Register Here!</h2>
+      <p style="text-align: center;">One step closer to your Online Banking!!</p>
+      <hr>
+      <div class="form-group">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <span class="fa fa-user"></span>
+                  </span>                    
+              </div>
+              <input type="text" class="form-control" name="username" placeholder="Account Number" [(ngModel)]=testcust.accountNumber required="required">
+          </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <span class="fa fa-user"></span>
+                </span>                    
+            </div>
+            <input type="text" class="form-control" name="username" placeholder="UserName" [(ngModel)]=testcust.userName required="required">
+        </div>
+    </div>
+
+      <div class="form-group">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="fa fa-paper-plane"></i>
+                  </span>                    
+              </div>
+              <input type="email" class="form-control" name="email" [(ngModel)]=testcust.email placeholder="Email Address" required="required">
+          </div>
+      </div>
+      <div class="form-group">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="fa fa-lock"></i>
+                  </span>                    
+              </div>
+              <input type="password" class="form-control" name="password" [(ngModel)]=testcust.password placeholder="Password" required="required">
+          </div>
+      </div>
+      <!-- <div class="form-group">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="fa fa-lock"></i>
+                      <i class="fa fa-check"></i>
+                  </span>                    
+              </div>
+              <input type="password" class="form-control" name="confirm_password" [(ngModel)]=testcust.password placeholder="Confirm Password" required="required">
+          </div>
+      </div> -->
+
+      <div class="form-group">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="fa fa-lock"></i>
+                      <i class="fa fa-check"></i>
+                  </span>                    
+              </div>
+              <input type="text" class="form-control" name="confirm_password" placeholder="Enter OTP" required="required">
+          </div>
+      </div>
+      <div>
+        <span>{{message}}</span>
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-lg">Send Otp</button>
+      </div>
+  </form>
+  <form *ngIf="signup" (ngSubmit)="signUp()" name="form1"  class="form-detail" #addCustForm="ngForm">
+    <h2 style="text-align: center;">Register Here!</h2>
+    <p style="text-align: center;">One step closer to your Online Banking!!</p>
+    <hr>
+    <br>
+    <span class="alert alert-success " role="alert">{{message}}</span>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <span class="fa fa-user"></span>
+                </span>                    
+            </div>
+            <input type="text" class="form-control" name="username" value={{testcust.accountNumber}} required="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fa fa-paper-plane"></i>
+                </span>                    
+            </div>
+            <input type="email" class="form-control" name="email"  value={{testcust.email}} required="required">
+        </div>
+    </div>
+    <!-- <label>password :
+        <input name="password" id="password" type="password" onkeyup='check();' />
+      </label>
+      <br>
+      <label>confirm password:
+        <input type="password" name="confirm_password" id="confirm_password"  onkeyup='check();' /> 
+        <span id='message'></span>
+      </label> -->
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fa fa-lock"></i>
+                </span>                    
+            </div>
+            <input type="password" class="form-control" name="password" value={{testcust.password}} onkeyup='check()'  required="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fa fa-lock"></i>
+                    <i class="fa fa-check"></i>
+                </span>                    
+            </div>
+            <input type="password" class="form-control" name="confirm_password" value={{testcust.password}} onkeyup='check()'  required="required">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fa fa-lock"></i>
+                    <i class="fa fa-check"></i>
+                </span>                    
+            </div>
+            <input type="text" class="form-control" name="confirm_password" [(ngModel)]=otp.otpMessage placeholder="Enter OTP" ng required="required">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+    </div>
+</form>
+
+  <div class="text-center">Already have an account? <a href="#" style="background-color: #93cb52; padding: 5px 5px 5px 5px; text-decoration: none; border-radius: 4px;">Login here</a></div>
+</div>
+</body>

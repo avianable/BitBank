@@ -1,0 +1,141 @@
+body {
+  
+    background: url('../../assets/pexels-photo-1124960.jpeg') no-repeat center center/cover;
+  }
+
+  #navbar {
+    display: flex;
+    position: sticky;
+    top:0;
+    background: #333;
+    color: #fff;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 1rem;
+  }
+  
+  #navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  
+  #navbar ul li a {
+    color: #fff;
+    padding: 0.75rem;
+    margin: 0 0.25rem;
+  }
+  
+  #navbar ul li a:hover {
+    background: #93cb52;
+    border-radius: 5px;
+  }#navbar {
+    display: flex;
+    position: sticky;
+    top:0;
+    background: #333;
+    color: #fff;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 1rem;
+  }
+  
+  #navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  
+  #navbar ul li a {
+    color: #fff;
+    padding: 0.75rem;
+    margin: 0 0.25rem;
+  }
+  
+  #navbar ul li a:hover {
+    background: #93cb52;
+    border-radius: 5px;
+  }
+  
+  .faq-nav {
+    padding-top: 130px;
+    flex-direction: column;
+    margin: 0 0 32px;
+    border-radius: 2px;
+    
+    
+    box-shadow: 0 1px 5px rgba(85, 85, 85, 0.15);
+  }
+  .faq-nav .nav-link {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 13px 16px;
+    background-color: #fff;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    color: #616161;
+    transition: background-color .2s ease;
+  }
+  .faq-nav .nav-link:hover {
+    background-color: #f6f6f6;
+  }
+  .faq-nav .nav-link.active {
+    background-color: #f6f6f6;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .faq-nav .nav-link:last-of-type {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom: 0;
+  }
+  .faq-nav .nav-link i.mdi {
+    margin-right: 5px;
+    font-size: 18px;
+    position: relative;
+  }
+  
+  .tab-content {
+    box-shadow: 0 1px 5px rgba(85, 85, 85, 0.15);
+    padding-top: 130px;
+  }
+  .tab-content .card {
+    border-radius: 0;
+  }
+  .tab-content .card-header {
+    padding: 15px 16px;
+    border-radius: 0;
+    background-color: #f6f6f6;
+  }
+  .tab-content .card-header h5 {
+    margin: 0;
+  }
+  .tab-content .card-header h5 button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.87);
+    text-align: left;
+    white-space: normal;
+  }
+  .tab-content .card-header h5 button:hover, .tab-content .card-header h5 button:focus, .tab-content .card-header h5 button:active, .tab-content .card-header h5 button:hover:active {
+    text-decoration: none;
+  }
+  .tab-content .card-body p {
+    color: #616161;
+  }
+  .tab-content .card-body p:last-of-type {
+    margin: 0;
+  }
+  
+  .accordion > .card:not(:first-child) {
+    border-top: 0;
+  }
+  
+  .collapse.show .card-body {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  }

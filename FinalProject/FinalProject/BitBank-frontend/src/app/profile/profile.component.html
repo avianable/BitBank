@@ -1,0 +1,116 @@
+<body>
+  <nav id="navbar">
+    <h2 class="logo" >
+      <span style="color: #93bc52;" >
+        <i class="fas fa-university"> BitBank</i>
+      </span>
+      </h2>
+      <ul>
+        <li><a [routerLink]='["/dashboard2"]' style="text-decoration: none;">Dashboard</a></li>
+        
+        <li><a [routerLink]='["/home"]' style="text-decoration: none;">Logout</a></li>
+        
+        
+        
+      </ul>
+  </nav>
+  
+  <div class="container">
+  
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="main-breadcrumb">
+      <ol class="breadcrumb" style="background-color: #93bc52;">
+      
+        <li class="breadcrumb-item "  style="color: black; " aria-current="page">Profile Settings</li>
+      </ol>
+    </nav>
+    <!-- /Breadcrumb -->
+  
+    <div class="row gutters-sm">
+      <div class="col-md-4 d-none d-md-block">
+        <div class="card">
+          <div class="card-body">
+            <nav class="nav flex-column nav-pills nav-gap-y-1" >
+              <a  [routerLink]='["/profile"]' data-toggle="tab " class="nav-item nav-link has-icon nav-link-faded">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user mr-2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Profile Information
+              </a>
+      
+              <!-- <a href="#security" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield mr-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Security
+              </a> -->
+      
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header border-bottom mb-3 d-flex d-md-none">
+            <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
+              <li class="nav-item">
+                <a  href="#profile" data-toggle="tab" class="nav-link has-icon active">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle></svg></a>
+              </li>
+             
+              <!-- <li class="nav-item">
+                <a href="#security" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></a>
+              </li> -->
+            
+            </ul>
+          </div>
+          <div class="card-body tab-content">
+            <div class="tab-pane active" id="profile">
+              <h6>YOUR PROFILE INFORMATION</h6>
+
+              
+              <hr>
+              <form>
+                <div class="form-group">
+                  <label for="fullName">Full Name</label>
+                  <label type="text" class="form-control" id="fullName" aria-describedby="fullNameHelp" >{{customer.firstName}} {{customer.lastName}}</label>
+                    </div>
+                <div class="form-group">
+                  <label for="bio">Address</label>
+                  <label class="form-control autosize" id="bio" placeholder="Write something about you"  style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 62px;">{{ customer.custDetails.street }}, {{ customer.custDetails.city }}, {{ customer.custDetails.state }}, {{ customer.custDetails.pincode }}
+                    INDIA</label>
+                </div>
+                <div class="form-group">
+                  <label for="url">Mobile Number</label>
+                  <label type="text" class="form-control" id="url" placeholder="Enter your website address">{{customer.custDetails.mobileNumber}}</label>
+                </div>
+                <div class="form-group">
+                  <label for="location">Email</label>
+                  <label type="email" class="form-control" id="location" placeholder="Edit your Email">{{customer.email}}</label>
+                </div>
+               
+                
+              </form>
+            </div>
+        
+            <!-- <div class="tab-pane" id="security">
+              <h6>SECURITY SETTINGS</h6>
+              <hr>
+              <form (ngSubmit)='updatepassword()' >
+                <div class="form-group">
+                  <label class="d-block">Change Password</label>
+                  <input type="text" class="form-control" placeholder="Enter your old password" [(ngModel)]="customer.password" [ngModelOptions]="{standalone: true}">
+                  <input type="text" class="form-control mt-1" placeholder="New password" [(ngModel)]="updatedcustomer.password" [ngModelOptions]="{standalone: true}">
+                  <input type="text" class="form-control mt-1" placeholder="Confirm new password"[(ngModel)]="updatedcustomer.password" [ngModelOptions]="{standalone: true}">
+                  <span class="alert alert-success" role="alert">{{message}}</span>
+                </div>
+                <button class="btn btn-dark btn-sm ml-auto" type="submit">Change Password</button>
+              </form>
+              <hr>
+            
+            </div> -->
+           
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  </body>

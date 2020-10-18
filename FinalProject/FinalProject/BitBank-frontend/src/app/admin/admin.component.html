@@ -1,0 +1,115 @@
+<nav id="navbar">
+  <div>
+  <h3 style="font-weight: bold;"><i class="fas fa-university fa-1x" style="color: #93cb52; padding-top: 10px;"></i>&nbsp; BitBank</h3> 
+</div>
+
+  <ul style="text-decoration: none;">
+    <li><a [routerLink]='["/home"]'>Logout</a></li>
+  
+   </ul> 
+</nav>
+
+<hr>
+<div class="card" style="background-color: #dfe6e0;">
+  <div  style="margin:auto;">
+    <button  class="shadow-lg btn btn-primary btn-lg" style="font-style:bold;margin:20px;width:10rem;" (click)="showCustomers('all',true,false,false,false)">All</button>
+<button class="shadow-lg btn btn-warning btn-lg" style="margin:20px;width:10rem;" (click)="showCustomers('pending',false,true,false,false)">Pending</button>
+<button class="shadow-lg btn btn-success btn-lg" style="margin:20px;width:10rem;" (click)="showCustomers('active',false,false,true,false)">Active</button>
+<button class="shadow-lg btn btn-secondary btn-lg" style="margin:20px;width:10rem;" (click)="showCustomers('inactive',false,false,false,true)">InActive</button>
+  </div>
+</div><table class="table table-sm table-hover table-bordered">
+  <thead>
+      <tr class="bf">
+          <th>Account Details</th>
+          <th *ngIf="pending" colspan="2" style="text-align:center;">Action</th>
+          <th>Personal Details</th> 
+           <!-- <th>Occupational Details</th> -->
+          <th>Address</th>
+          <th *ngIf="all">Status</th> 
+      </tr>
+  </thead>
+  <tbody >
+      <tr  *ngFor="let cust of testCustList;"> 
+        <td  style="padding:20px;"><span class="bf">{{cust.firstName + " " + cust.lastName }}</span>
+          <table class="table table-sm details"> 
+            <tbody>
+              <tr>
+                    <th scope="row">Account Number</th>
+                    <td>{{cust.accountNumber }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Username</th>
+                <td>{{cust.userName }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Password</th>
+                <td colspan="2">{{cust.password }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Account Balance</th>
+                <td>{{cust.accountBalance }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+
+        <td *ngIf="pending"><button (click)='setCustomerStatus(cust.accountNumber,"active")' class="btn btn-outline-success">Approve</button></td>  
+        <td *ngIf="pending"><button (click)='deleteCustomer(cust.accountNumber)' class="btn btn-outline-danger">Reject</button></td>  
+        <td style="padding:20px;">
+          <table class="table table-sm details"> 
+             
+            <tbody>
+              <!-- <tr>
+                    <th scope="row">Father's Name</th>
+                    <td>{{ cust.middleName }}</td>
+              </tr> -->
+              <tr>
+                <th scope="row">Email Id</th>
+                <td>{{ cust.email }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Aadhar</th>
+                <td>{{ cust.custDetails.aadharNumber }}</td>
+              </tr>
+              <tr>
+                <th scope="row">PAN</th>
+                <td colspan="2">{{ cust.custDetails.panNumber }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <!-- <td style="padding:20px;">
+          <table class="table table-sm details">
+            <tbody> 
+              <tr>
+                    <th width="50%" scope="row">Occupation Type</th>
+                    <td>{{ cust.custDetails.occupationType }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Income Source</th>
+                <td>NA</td>
+              </tr>
+              <tr>
+                <th scope="row">AnnualIncome</th>
+                <td>10000</td>
+              </tr>
+              <tr>
+                <th class="bf" scope="row">Net Banking?</th>
+                <td>YES</td>
+              </tr>
+            </tbody>
+          </table>
+        </td> -->
+        <td style="padding:20px;">
+          {{ cust.custDetails.street }},<br>
+          {{ cust.custDetails.city }}, <br>
+          {{ cust.custDetails.state }} {{ cust.custDetails.pincode }} <br>
+          INDIA<br>
+          <span><b class="bf">Ph:</b>+91 {{ cust.custDetails.mobileNumber}}</span>
+        </td>      
+        <td *ngIf="all"><span style="color:red;">{{cust.status }}</span> </td>  
+        <td *ngIf="active"><button (click)='setCustomerStatus(cust.accountNumber,"inactive")' class="btn btn-outline-danger">Make Inactive</button></td>  
+        <td *ngIf="inactive"><button (click)='setCustomerStatus(cust.accountNumber,"active")' class="btn btn-success">Make Active</button></td>  
+      </tr>
+  </tbody>
+</table>

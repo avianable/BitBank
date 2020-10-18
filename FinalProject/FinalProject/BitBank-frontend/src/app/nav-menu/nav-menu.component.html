@@ -1,0 +1,27 @@
+<nav id="navbar">
+  <h2 class="logo">
+    <span class="text-primary">
+      <i class="fas fa-book-open"> BoLTI</i>
+    </span>
+    </h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#contact">Login</a></li>
+    <li><a [routerLink]='["/register"]'>Signup</a></li>
+    
+    <li><a href="#what">What We do</a></li>
+    <li><a href="#who">about us</a></li>
+
+    <div class="dropdown show">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
+        Dropdown link
+      </a>
+    
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" [routerLink]='["/home"]' >User</a>
+        <a class="dropdown-item" [routerLink]='["/admin"]'>Admin</a>
+      </div>
+    </div>
+    
+  </ul>
+</nav>

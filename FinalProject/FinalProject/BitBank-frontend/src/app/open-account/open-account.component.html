@@ -1,0 +1,230 @@
+<body class="form-v10">
+	<nav id="navbar">
+		<div>
+		<h3 style="font-weight: bold;"><i class="fas fa-university fa-1x" style="color: #93cb52; padding-top: 10px;"></i>&nbsp; BitBank</h3> 
+	 </div>
+	 
+		<ul style="text-decoration: none;">
+		  <li><a href="#home">Home</a></li>
+		  <li><a href="#contact">Login</a></li>
+		  <li><a href="#what">Apply Online!</a></li>
+		  
+		  
+		</ul>
+	  </nav>
+	
+	<div class="page-content">
+		<div class="form-v10-content">
+			<form (ngSubmit)="saveCustomer()" class="form-detail" #addCustForm="ngForm">
+				<div class="form-left">
+					<h2>General Infomation</h2>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input  class="input-text" type="text" name="firstName" [(ngModel)]=testAddCust.firstName  placeholder="First Name" required pattern="[A-Z]{1}[a-z]{1,}" #firstName="ngModel">
+              <span class="alert-warning" *ngIf="firstName.touched && firstName.invalid">First Name is invalid</span>
+            </div>
+						<div class="form-row form-row-2">
+							<input  class="input-text" type="text" name="lastName" [(ngModel)]=testAddCust.lastName  placeholder="Last Name" required pattern="[A-Za-z]{2,}" #lastName="ngModel">
+              <span class="alert-warning" *ngIf="lastName.touched && lastName.invalid">Last Name is invalid</span>
+            </div>
+						
+					</div>
+					
+
+          <div class="form-row form-row-2">
+						<input  class="input-text" type="number" name="aadharNumber" [(ngModel)]=testAddCustDetail.aadharNumber placeholder="Aadhar Number" required pattern="[0-9]{12}" #aadharNumber="ngModel">
+            <span class="alert-warning" *ngIf="aadharNumber.touched && aadharNumber.invalid">Aadhar Number should be of 12 digits</span>
+          </div>
+
+          <div class="form-row form-row-2">
+						<input  class="input-text" type="text" name="panNumber" [(ngModel)]=testAddCustDetail.panNumber placeholder="Pan Number" required pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" #panNumber="ngModel">
+            <span class="alert-warning" *ngIf="panNumber.touched && panNumber.invalid">Invalid PAN format.Please check again.</span>
+          </div>
+          
+					<label style="padding-left: 75px;">Date of birth</label>
+					<div class="form-row form-row-2">
+						<input type="date" name="Date of Birth" id="last_name" class="input-text" placeholder="Date of birth" required>
+					</div>
+					<div class="form-row">
+			   <label style="padding-left:15px;">Occupation Type</label>
+              <select name="occupationType" [(ngModel)]=testAddCustDetail.occupationType required #occupationType="ngModel">
+              
+              <option selected disabled>Occupation Type</option>
+							<!-- <option value="Student" disabled>Occupation Type</option> -->
+							<option>Student</option> 
+							<option>IT Professional</option>
+							<option>Government Service</option>
+							<option>Retired</option>
+						</select>
+						<span class="select-btn">
+						  	<i class="zmdi zmdi-chevron-down"></i>
+						</span>
+					</div>
+                    
+					<div class="form-row">
+						<label style="padding-left:15px;">Source of Income</label>
+						<select name="incomeSource" [(ngModel)]=testAddCustDetail.incomeSource required #incomeSource="ngModel">>
+							<option>Source of Income</option>
+							<option>Government</option>
+                			<option>Private</option>
+						</select>
+						<span class="select-btn">
+						  	<i class="zmdi zmdi-chevron-down"></i>
+						</span>
+					</div>
+                    
+					<div class="form-row">
+						<label style="padding-left:15px;">AnnualIncome</label>
+						<select name="annualIncome" [(ngModel)]=testAddCustDetail.annualIncome required #annualIncome="ngModel">
+							<option disabled="disabled" selected="selected">Annual Income</option>
+							<option> Less than Rs.1,00,000 </option>
+							<option>Rs.1,00,000-Rs.5,00,000</option>
+							<option>Rs.6,00,000-Rs.10,00,000</option>
+							<option>Greater than Rs.Rs.10,00,000</option>
+						</select>
+						<span class="select-btn">
+						  	<i class="zmdi zmdi-chevron-down"></i>
+						</span>
+					</div>
+
+					
+				</div>
+				<div class="form-right">
+					<h2>Contact Details</h2>
+					<!-- <div class="form-row">
+						<input type="text" name="street" class="street" id="street" placeholder="Address " required>
+					</div> -->
+					<div class="form-row">
+            <input  class="input-text" type="text" name="address" [(ngModel)]=testAddCustDetail.street  placeholder="HouseNo,StreetName/Locality" required pattern="[A-Z|a-z|0-9|,|\s|-]{10,50}$" #address="ngModel">
+            <span class="alert-warning" *ngIf="address.touched && address.invalid">Don't use spaces.</span>
+          </div>
+					<div class="form-group">
+						<!-- <div class="form-row form-row-1">
+							<input type="text" name="zip" class="zip" id="zip" placeholder="Zip Code" required>
+            </div> -->
+            <div class="form-row form-row-1">
+							<input  class="input-text" type="number" name="pincode" [(ngModel)]=testAddCustDetail.pincode  placeholder="Pin Code" required pattern="[0-9]{6}" #pincode="ngModel">
+              <span class="alert-warning" *ngIf="pincode.touched && pincode.invalid">Oops :)</span>
+			</div>
+			<!-- <label style="padding-left:15px; color: ivory  ; text-align: center; ">State</label> -->
+						<div class="form-row form-row-2">
+							<select name="state" [(ngModel)]=testAddCustDetail.state #state="ngModel" required>
+							    <option>State</option>
+							    <option>Andhra Pradesh</option>
+                  <option>Andaman and Nicobar Islands</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option>Assam</option>
+                  <option>Bihar</option>
+                  <option >Chandigarh</option>
+                  <option >Chhattisgarh</option>
+                  <option >Dadar and Nagar Haveli</option>
+                  <option >Daman and Diu</option>
+                  <option >Delhi</option>
+                  <option >Lakshadweep</option>
+                  <option >Puducherry</option>
+                  <option >Goa</option>
+                  <option >Gujarat</option>
+                  <option >Haryana</option>
+                  <option >Himachal Pradesh</option>
+                  <option >Jammu and Kashmir</option>
+                  <option >Jharkhand</option>
+                  <option >Karnataka</option>
+                  <option >Kerala</option>
+                  <option >Madhya Pradesh</option>
+                  <option >Maharashtra</option>
+                  <option >Manipur</option>
+                  <option >Meghalaya</option>
+                  <option >Mizoram</option>
+                  <option >Nagaland</option>
+                  <option >Odisha</option>
+                  <option >Punjab</option>
+                  <option >Rajasthan</option>
+                  <option >Sikkim</option>
+                  <option >Tamil Nadu</option>
+                  <option >Telangana</option>
+                  <option >Tripura</option>
+                  <option >West Bengal</option>
+                  <option >Uttar Pradesh</option>
+                  <option >Uttarakhand</option>
+
+							</select>
+							<span class="select-btn">
+							  	<i class="zmdi zmdi-chevron-down"></i>
+							</span>
+						</div>
+					</div>
+					<!-- <label style="padding-left:15px; color: ivory  ; align-items: center;  ">City</label> -->
+					<div class="form-row">
+						<select name="city" [(ngModel)]=testAddCustDetail.city #city="ngModel" required>
+						  <option>city</option>
+						  <option>Mumbai</option>
+						  <option>Bangaluru</option>
+							<option>Amaravati</option>
+							<option>Chennai</option>
+						  <option>Kolkata</option>
+							<option>Hyderabad</option>
+							<option >New Delhi</option>
+						  <option >Ahmedabad</option>
+							<option >Vishakapatnam</option>
+							<option >Jaipur</option>
+						  <option >Pune</option>
+							<option >Indore</option>
+							<option >Lucknow</option>
+						  <option >Surat</option>
+							<option >Chandigarh</option>
+							<option >Bhopal</option>
+						  <option >Patna</option>
+							<option >Kanpur</option>
+							<option >Gurugram</option>
+						  <option >Agra</option>
+							<option >Kochi</option>
+							<option >Noida</option>
+						  <option >Nagpur</option>
+							<option >Nashik</option>
+							<option >Vijaywada</option>
+						  <option >Amritsar</option>
+							<option >Coimbatore</option>
+							<option >Prayagraj</option>
+							<option >Asansol</option>
+							<option >Ahmedabad</option>
+							<option >Bihar</option>
+							<option >GUwahati</option>							
+						</select>
+						<span class="select-btn">
+						  	<i class="zmdi zmdi-chevron-down"></i>
+						</span>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="code" class="code" id="code" placeholder=" +91" disabled>
+						</div>
+						<!-- <div class="form-row form-row-2">
+							<input type="text" name="phone" class="phone" id="phone" placeholder="Phone Number" required>
+            </div> -->
+            <div class="form-row form-row-2">
+              <input  class="input-text" type="number" name="phone" [(ngModel)]=testAddCustDetail.mobileNumber placeholder="Phone Number" required pattern="[7|8|9|6]{1}[0-9]{9}" #phone="ngModel">
+              <span class="alert-warning" *ngIf="phone.touched && phone.invalid">Please enter correct phone number.</span>
+            </div>
+					</div>
+					<!-- <div class="form-row">
+						<input type="text" name="your_email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Your Email">
+          </div> -->
+          <div class="form-row">
+						<input  class="input-text" type="email" name="email" [(ngModel)]=testAddCust.email placeholder="Email address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #email="ngModel">
+            <span class="alert-warning" *ngIf="email.touched && email.invalid">Please enter correct email address.</span>
+          </div>
+					<div class="form-checkbox">
+						<label class="container"><p>I do accept the <a href="#" type="button"class="text">Terms and Conditions</a> of your site.</p>
+						  	<input type="checkbox" name="checkbox"  data-toggle="modal" data-target="#myModal" required>
+						  	<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="form-row-last">
+            <input type="submit" class="register" value="Register" [disabled]="!addCustForm.valid">
+            <!-- <button class="btn btn-success" type="submit" [disabled]="!addCustForm.valid">Add Employee</button> -->
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>

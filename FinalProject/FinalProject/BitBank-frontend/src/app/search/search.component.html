@@ -1,0 +1,270 @@
+<div id="accordion">
+        
+
+
+  <h6>Admin's User Approval Page</h6>
+    
+  
+  
+  <div id="demo" class="collapse">
+  Lorem ipsum dolor text....
+  </div>
+  
+  <br>
+  <br>
+  <div class="table-responsive" style="width:90%;margin:auto;"> 
+    <table class="table table-sm table-hover" style="margin:auto;" width="90%">
+      <thead class="bf">
+        <tr> 
+          <th scope="col">Sr.no</th>
+          <th scope="col">AccountNumber</th>
+          <th scope="col">FirstName</th>
+          <th scope="col">LastName</th>
+          <th scope="col">City</th>
+          <!-- <th scope="col">AadharNo</th> 
+          <th scope="col">PanNo</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr  class="collapsed" data-toggle="collapse" data-target="#collapseTushar" aria-expanded="false" aria-controls="collapseThree">
+          <th scope="row">2</th>
+          <td>2034512312345</td>
+          <td>Sahyadri</td>
+          <td>Saane</td>
+          <td>New Delhi</td>  
+        </tr>
+        <tr id="collapseTushar" class="collapse" aria-labelledby="headingThree" data-parent="#accordion" style="background-color: white; border:1px solid #26cca8;">
+            <td colspan="5">
+          <div class="row" style="margin:auto;">
+              <div class="col-sm-7">
+                  <table class="table table-sm"> 
+                      <thead>
+                        <tr>
+                          <th scope="col" colspan="4" style="text-align:center;">Personal Details</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                              <th scope="row">Father's Name</th>
+                              <td>Prataprao</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Email Id</th>
+                          <td>saanesahyadri@gmail.com</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Aadhar</th>
+                          <td>917267328921</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">PAN</th>
+                          <td colspan="2">EMOP432198</td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+              <div class="col-sm-5">
+                     <table class="table table-sm">
+                      <thead>
+                        <tr>
+                          <th scope="col" colspan="4" style="text-align:center;">Occupation Details</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                              <th width="50%" scope="row">Occupation Type</th>
+                              <td>Student</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Source of Income</th>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">AnnualIncome</th>
+                          <td>10000</td>
+                        </tr>
+                        <tr>
+                          <th class="bf" scope="row">Opted for Net Banking?</th>
+                          <td>YES</td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+          </div>
+          <div class="row" style="margin:auto;">
+              <div class="col-sm-12">
+                  <table class="table table-sm"> 
+                      <thead>
+                        <tr>
+                          <th scope="col" colspan="4" style="text-align:center;">Address</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                              <th scope="row">Permanent</th>
+                              <td> 
+                                  Rowhouse No. 8, 
+                              Apnapan Society, 
+                              Indiranagar, Pune, 
+                              MAHARASHTRA 110034
+                              INDIA
+                                  </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Residential</th>
+                          <td>
+                              Flat No. 100, 
+                                  Triveni Apartments, 
+                                  Pitam Pura, Apnanagar 
+                                  NEW DELHI 110034
+                                  INDIA
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div> 
+          </div>
+          <div class="row" style="margin:auto;">
+              <div class="col-sm-12">
+                  <a style="margin:10px;" href="#" class="btn btn-outline-success">Approve</a>
+                  <a href="#" class="btn btn-outline-danger">Reject</a>
+              </div> 
+          </div>
+      </td>
+        </tr>
+        
+            <tr>
+          <th scope="row">3</th>
+          <td>feugiat@dolor.net</td>
+          <td>Ap #524-2301 Feugiat Road</td>
+          <td>Daiano</td>
+          <td>25949</td>
+          <!-- <td>HR9530357221014204266</td>
+          <td>GB64IAWL50561289057517</td> -->
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>feugiat@dolor.net</td>
+          <td>Ap #524-2301 Feugiat Road</td>
+          <td>Daiano</td>
+          <td>25949</td>
+          <!-- <td>HR9530357221014204266</td>
+          <td>GB64IAWL50561289057517</td> -->
+        </tr>
+      </tbody>
+    </table>
+    <hr>  
+  </div>
+  <div>
+  
+  <br>
+  
+<hr>
+<table class="table table-bordered">
+  <thead>
+      <tr>
+          <th>Customer Account No</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>userName</th>
+          <th>Password</th>
+          <th>Account Balance</th>
+          <th>Status</th> 
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let cust of testCustList;">
+        <td>{{cust.accountNumber }}</td>
+        <td>{{cust.firstName }}</td>
+        <td>{{cust.lastName }}</td>
+        <td>{{cust.userName }}</td>
+        <td>{{cust.password }}</td>
+        <td>{{ cust.accountBalance }}</td>      
+        <td><span style="color:red;">{{cust.status }}</span> </td>  
+          <!-- <td><button class="btn btn-danger" (click)="deleteEmp(emp.empid)">Delete</button>&nbsp;
+              <button class="btn btn-success" (click)="editEmp(emp.empid)">Edit</button>
+          </td> -->
+      </tr>
+      <!-- <td><button class="btn btn-success" (click)="sortOnId()">Sort By Id</button></td>
+      &nbsp;
+      <td><button class="btn btn-success" (click)="sortOnName()">Sort By Name</button></td>
+      &nbsp;
+      <td><button class="btn btn-success" (click)="sortOnSalary()">Sort By Salary</button></td> -->
+  </tbody>
+</table>
+
+
+
+<p>search works!</p>
+
+<h1 (click)="searchBenf()">Check</h1>
+
+<form (ngSubmit)="searchBenf()" #addForm="ngForm">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Beneficiary id</th>
+                <td><input name="id" class="form-control" type="text" [(ngModel)]=id pattern="[0-9]{10}" placeholder="Enter account Number" required #sid="ngModel">
+                    <span class="alert-warning" *ngIf="sid.touched && sid.invalid">ID is invalid</span></td>
+                <th><button class="btn btn-success" type="submit" [disabled]="!addForm.valid">Search</button></th> 
+            </tr> 
+        </thead>
+        <tbody>
+            <tr>
+                <td>Beneficiary Details:
+                <ul>
+                <!-- <li>Status:<span  style="color:green;">{{testCust.status }}</span> </li>   -->
+                <li>Customer Account No: {{testCust.accountNumber }}</li>
+                <li>FirstName: {{testCust.firstName }}</li>
+                <li>LastName: {{testCust.lastName }}</li>
+                <li>userName: {{testCust.userName }}</li>
+                <li>Password: {{testCust.password }}</li>
+                <li>Account Balance : {{ testCust.accountBalance }}</li>
+            </ul>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+
+    </form>
+    <h6 style="padding-left:150px;" >Add Beneficiary starts here.</h6>
+
+  <div class="card" style="width:80%;margin:auto;">
+  <div class="card-header bf" >
+    Enter the details of the Beneficiary
+  </div>
+  <div class="card-body">
+
+  <form (ngSubmit)="searchBenf()">
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="accountNumber">Account Number</label>
+          <input name="id" class="form-control" type="text" [(ngModel)]=id pattern="[0-9]{10}" placeholder="ID" required #sid="ngModel">
+          <!-- <input type="text" name="accountNumber" class="form-control" id="inputEmail4" placeholder="Account Number"> -->
+        </div>
+        <div class="form-group col-md-6">
+          <label for="confirmAccountNumber">Click below to check if account number exists.</label>
+          <button class="btn btn-success form-control" (click)="searchBenf()">Search</button>
+        </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="beneficiaryName">First Name</label>
+        <input type="text" name="beneficiaryName" value="{{testCust.firstName }}" class="form-control" id="inputEmail4" placeholder="Beneficiary Name" disabled>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="nickName">Last Name</label>
+        <input type="email" name="LastName" value="{{testCust.lastName}}" class="form-control" id="inputEmail4" placeholder="LastName" disabled>
+      </div>
+    </div>
+  
+  
+  <button type="submit" class="btn bf">Add Beneficiary</button>
+</form>
+
+</div>
+</div>
+<h1>Check..{{ searchBenf() }}</h1>

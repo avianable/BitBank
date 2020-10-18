@@ -1,0 +1,252 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://cdn.3up.dk/mdi@2.2.43/css/materialdesignicons.min.css'>
+
+<body style="height: 100vh; ">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="min-height: 80px;">
+        <a class="navbar-brand" href="#" style="font-size: 30px; color: #93cb52;"><i class="fas fa-book-open"
+            style="color: #93cb52;"></i>BitBank</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+              style="color: #fff; background-color: #93cb52; padding: 10px ;border-radius: 10px;margin-right:16px; "
+              onMouseOver="this.style.color='black'" onMouseOut="this.style.color='white'">
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item" id="navhover">
+            <a class="nav-link" href="#"
+              style="color: #fff;  background-color: #93cb52; padding: 10px 10px ;border-radius: 10px; padding-left: 5px;"
+              onMouseOver="this.style.color='black'" onMouseOut="this.style.color='white'">
+    
+              Logout
+          </a> -->
+     
+<!-- partial:index.partial.html -->
+<nav id="navbar">
+    <h2 class="logo" >
+      <span style="color: #93bc52;" >
+        <i class="fas fa-university"> BitBank</i>
+      </span>
+      </h2>
+      <ul>
+        <li><a  [routerLink]='["/dashboard2"]'  style="text-decoration: none;">Dashboard</a></li>
+        
+        <li><a [routerLink]='["/register"]' style="text-decoration: none;">Logout</a></li>
+        
+      </ul>
+  </nav>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="nav nav-pills faq-nav" id="faq-tabs" role="tablist" aria-orientation="vertical">
+                <a href="#tab1" class="nav-link active" data-toggle="pill" role="tab" aria-controls="tab1" aria-selected="true">
+                    <i class="mdi mdi-help-circle"></i> Frequently Asked Questions
+                </a>
+                <a href="#tab2" class="nav-link" data-toggle="pill" role="tab" aria-controls="tab2" aria-selected="false">
+                    <i class="mdi mdi-account"></i> Profile
+                </a>
+                <a href="#tab3" class="nav-link" data-toggle="pill" role="tab" aria-controls="tab3" aria-selected="false">
+                    <i class="mdi mdi-account-settings"></i> Account
+                </a>
+                <a href="#tab4" class="nav-link" data-toggle="pill" role="tab" aria-controls="tab5" aria-selected="false">
+                    <i class="mdi mdi-coin"></i> Transactions
+                </a>
+               
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="tab-content" id="faq-tab-content">
+                <div class="tab-pane show active" id="tab1" role="tabpanel" aria-labelledby="tab1">
+                    <div class="accordion" id="accordion-tab-1">
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-1-heading-1">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-1" aria-expanded="false" aria-controls="accordion-tab-1-content-1">What is Online Banking?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse show" id="accordion-tab-1-content-1" aria-labelledby="accordion-tab-1-heading-1" data-parent="#accordion-tab-1">
+                                <div class="card-body">
+                                    <p>Online Banking is a tool that allows you to use a personal computer with an Internet connection
+                                         to conduct your banking online.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-1-heading-2">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-2" aria-expanded="false" aria-controls="accordion-tab-1-content-2">
+                                        What can I do with Online Banking?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-1-content-2" aria-labelledby="accordion-tab-1-heading-2" data-parent="#accordion-tab-1">
+                                <div class="card-body">
+                                    <p>You can view account balances and transaction history, transfer money, and download transactions to a personal financial manager and much more.
+                                         Register  on our website to see all the features of Online Banking and how you can personalize your online banking experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-1-heading-3">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-3" aria-expanded="false" aria-controls="accordion-tab-1-content-3"> Is any of my personal information stored in the Online Banking product?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-1-content-3" aria-labelledby="accordion-tab-1-heading-3" data-parent="#accordion-tab-1">
+                                <div class="card-body">
+                                    <p>Yes, the Online Banking product stores your User ID, password and user preferences.
+                                        We do not take any of your personal data without your permission.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-1-heading-4">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-4" aria-expanded="false" aria-controls="accordion-tab-1-content-4">When can I use Online Banking services?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-1-content-4" aria-labelledby="accordion-tab-1-heading-4" data-parent="#accordion-tab-1">
+                                <div class="card-body">
+                                    <p>With Online Banking, you have access to your account information 24 hours a day, 7 days a week!
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab2" role="tabpanel" aria-labelledby="tab2">
+                    <div class="accordion" id="accordion-tab-2">
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-2-heading-1">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-2-content-1" aria-expanded="false" aria-controls="accordion-tab-2-content-1">Can I change my mobile number ?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse show" id="accordion-tab-2-content-1" aria-labelledby="accordion-tab-2-heading-1" data-parent="#accordion-tab-2">
+                                <div class="card-body">
+                                    <p> Yes you can change or edit your mobile number anytime.. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-2-heading-2">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-2-content-2" aria-expanded="false" aria-controls="accordion-tab-2-content-2">Can I change my userame?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-2-content-2" aria-labelledby="accordion-tab-2-heading-2" data-parent="#accordion-tab-2">
+                                <div class="card-body">
+                                    <p>Yes you can cahnge your username if it is available.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-2-heading-3">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-2-content-3" aria-expanded="false" aria-controls="accordion-tab-2-content-3">Can I change my Account Number ?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-2-content-3" aria-labelledby="accordion-tab-2-heading-3" data-parent="#accordion-tab-2">
+                                <div class="card-body">
+                                    <p>Sorry you can't change the account Number.Only the BitBank admins can alter it.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3">
+                    <div class="accordion" id="accordion-tab-3">
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-3-heading-1">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-3-content-1" aria-expanded="false" aria-controls="accordion-tab-3-content-1">
+                                        What are the available functionalities related to my account?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse show" id="accordion-tab-3-content-1" aria-labelledby="accordion-tab-3-heading-1" data-parent="#accordion-tab-3">
+                                <div class="card-body">
+                                    <p>You can see your account details,account transaction and add beneficiary anytime.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-3-heading-2">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-3-content-2" aria-expanded="false" aria-controls="accordion-tab-3-content-2">How many  beneficiaries can i add?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-3-content-2" aria-labelledby="accordion-tab-3-heading-2" data-parent="#accordion-tab-3">
+                                <div class="card-body">
+                                    <p>Don't worry we have got you covered.You can add any number of beneficiaries you like.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-3-heading-3">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-3-content-3" aria-expanded="false" aria-controls="accordion-tab-3-content-3">Can we add beneficiaries of diffrent banks as well?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-3-content-3" aria-labelledby="accordion-tab-3-heading-3" data-parent="#accordion-tab-3">
+                                <div class="card-body">
+                                    <p>Yes you can add beneficiaries who are not of our bank.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab4" role="tabpanel" aria-labelledby="tab4">
+                    <div class="accordion" id="accordion-tab-4">
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-4-heading-1">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-4-content-1" aria-expanded="false" aria-controls="accordion-tab-4-content-1">What can i do in transactions?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse show" id="accordion-tab-4-content-1" aria-labelledby="accordion-tab-4-heading-1" data-parent="#accordion-tab-4">
+                                <div class="card-body">
+                                    <p>You can send money to any person you like or send money to your beneficiaries that you have added earlier.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-4-heading-2">
+                                <h5>
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-4-content-2" aria-expanded="false" aria-controls="accordion-tab-4-content-2">Can i see my transaction history ?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-4-content-2" aria-labelledby="accordion-tab-4-heading-2" data-parent="#accordion-tab-4">
+                                <div class="card-body">
+                                    <p>Yes you can see all your transaction history in the account statements option in your dashboard.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="accordion-tab-4-heading-3">
+                                <h5>
+                                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-4-content-3" aria-expanded="false" aria-controls="accordion-tab-4-content-3">Can I see the transaction between certain dates?</button>
+                                </h5>
+                            </div>
+                            <div class="collapse" id="accordion-tab-4-content-3" aria-labelledby="accordion-tab-4-heading-3" data-parent="#accordion-tab-4">
+                                <div class="card-body">
+                                    <p>Yes you can set the date and see your transactions between  dates</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+<!-- partial -->
+  <script src='https://cdn.3up.dk/jquery@3.3.1/dist/jquery.slim.min.js'></script>
+<script src='https://cdn.3up.dk/bootstrap@4.1.3/dist/js/bootstrap.min.js'></script>

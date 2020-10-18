@@ -1,0 +1,147 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <title>BoLTI || Homepage</title>
+</head>
+
+<nav id="navbar">
+  <h2 class="logo" >
+    <span style="color: #93bc52;" >
+      <i class="fas fa-university"> BitBank</i>
+    </span>
+    </h2>
+    <ul>
+      <li><a href="#home" style="text-decoration: none;">Home</a></li>
+      
+      <li><a [routerLink]='["/register"]' style="text-decoration: none;">Signup</a></li>
+      
+      <li><a href="#what" style="text-decoration: none;">What We do</a></li>
+      <li><a href="#who" style="text-decoration: none;">About Us</a></li>
+  
+      <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" style="background-color: #93bc52;">
+          Login
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a href="#contact" class="dropdown-item"  >User</a>
+          <a class="dropdown-item" [routerLink]='["/adminlogin"]'>Admin</a>
+        </div>
+      </div>
+      
+    </ul>
+</nav>
+
+
+
+
+<header id="showcase">
+  <div class="showcase-content">
+    <h1 class="l-heading">
+      Thank You For choosing Net-Banking
+    </h1>
+    <p class="lead">
+      Hey there! Welcome to BitBank online banking.<br>Enjoy our services at the comfort of your home. <br>Cause your money needs a home too
+    </p>
+    <button type="button" value="Login" (click)="openaccount()" class="btn btn-dark">Open Savings</button>
+  </div>
+</header>
+
+<!-- Section: Contact -->
+<section id="contact">
+  <div class="contact-form " style="background-color: #93bc52">
+    <h2 class="m-heading" style="text-align: center; padding-top: 20px; color:antiquewhite">Login</h2>
+    <p style="text-align: center;font-weight: 500;">Login to your Dashboard</p>
+    <form (ngSubmit)='loggedIn()' #loginform="ngForm">
+      <small class="text-danger">{{ message }}</small>
+      <div class="form-group">
+        <label for="email">Username</label>
+        <input type="text" class="form-control" placeholder="Enter userame" name="username" [(ngModel)]="login.userName" required pattern="[A-Za-z0-9]+"
+        #username="ngModel"
+        [class.is-invalid]="username.invalid && username.touched">
+        <!-- <input name="userName"[(ngModel)]=login.userName >  -->
+        <div *ngIf ="username.errors && (username.invalid && username.touched)">
+          <small class="text-danger" *ngIf="username.errors.required">username is a required field</small>
+          <small class="text-danger" *ngIf="username.errors.pattern">enter the valid username</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Password</label>
+        <input type="password" class="form-control" placeholder="Enter password" name="password" [(ngModel)]="login.password" required
+        #password="ngModel"
+        [class.is-invalid]="password.invalid && password.touched">
+        <!-- <input name="password"[(ngModel)]=login.password> -->
+      </div>
+      <div *ngIf ="password.errors && (password.invalid && password.touched)">
+        <small class="text-danger" *ngIf="password.errors.required">password is a required field</small>
+      </div>
+      <div class="form-link">
+        <a href="" style="color: white;  text-decoration: underline;padding-left: 320px; padding-top:10px"  [routerLink]='["/forgetuserid"]'>Forgot password?</a><br><br>
+      </div>
+      <div style="align-items: center; padding-left: 290px; margin-bottom: 30px;">
+      <button [disabled]="loginform.form.invalid"  type="submit" class="btn btn-info btn-dark" >Login</button></div>
+    </form>
+  </div>
+  <div class="contact-img"></div>
+</section>
+
+
+<!-- Section: What We Do -->
+<section id="what" class="bg-light py-1">
+  <div class="container">
+    <h2 class="m-heading text-center" style="padding-top: 20px;"><span style="color: #93bc52;">What</span> We Do</h2>
+    <div class="items">
+      <div class="item">
+        <i class="fas fa-university fa-2x"></i>
+        <div>
+          <h3>Investment Banking</h3>
+          <p>Not getting enough offers? Dont worry We offer you amazing deals everytime you use BitBank! </p>
+        </div>
+      </div>
+      <div class="item">
+          <i class="fas fa-book-reader fa-2x"></i>
+          <div>
+            <h3>Quick Transfers</h3>
+            <p>Don't have a payee? Add payee and transfer money hassle-free!</p>
+          </div>
+      </div>
+      <div class="item">
+          <i class="fas fa-pencil-alt fa-2x"></i>
+          <div>
+            <h3>Helpful Staff</h3>
+            <p>Have a doubt? Reach out to us anytime. Our staff will be happy to help.</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section: Who We Are -->
+<section id="who">
+  <div class="who-img"></div>
+  <div class="who-text bg-dark p-2">
+    <h2 class="m-heading"><span  style="color: #93bc52;">Who</span> We Are</h2>
+    <p>Thank you for choosing Net banking. You are contributing to safety of yourself and others by choosing us.</p>
+    <h3  style="color: #93bc52; font-style:italic">Our Team</h3>
+    <ul class="list">
+     
+      <li>Mitshu Ghosh: Team leader</li>
+      <li>Arnab Choudhuri: Developer</li>
+      <li>Abhinav Anand: Developer</li>
+      <li>Tushar Kadam: Developer</li>
+      
+    </ul>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer id="main-footer" class="bg-dark text-center py-1">
+  <div class="container">
+    <p>Copyright &copy; 2020, BoLTI, All Rights Reserved</p>
+  </div>
+</footer>

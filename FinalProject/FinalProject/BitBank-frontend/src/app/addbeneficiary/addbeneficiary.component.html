@@ -1,0 +1,97 @@
+
+<body  style= " height: 100vh; background: url('../../assets/blur-abstract-background-260nw-742715635.webp') no-repeat center/cover;">
+  <nav id="navbar">
+    <h2 class="logo" >
+      <span style="color: #93bc52;" >
+        <i class="fas fa-university"> BitBank</i>
+      </span>
+      </h2>
+      <ul>
+        <li><a [routerLink]='["/dashboard2"]' style="text-decoration: none;">Dashboard</a></li>
+        
+        <li><a [routerLink]='["/home"]' style="text-decoration: none;">Logout</a></li>
+        
+        
+        
+      </ul>
+  </nav>
+  <div class="card" style="width:80%;  margin:auto; margin-top: 150px;">
+  <div class="card-header bf"  >
+    Enter the details of the Beneficiary
+  </div>
+  <div class="card-body">
+  <form (ngSubmit)="addBeneficiary()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="beneficiaryName">Beneficiary First Name</label>
+        <input type="text" name="beneficiaryName" class="form-control" id="inputEmail4" [(ngModel)]=benef.firstName placeholder="Enter Beneficiary Name">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="nickName">Last Name</label>
+        <input type="email" name="nickName" class="form-control" id="inputEmail4" [(ngModel)]=benef.lastName placeholder="Enter Last Name">
+      </div>
+    </div>
+  <!-- <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="bankName">Bank Name</label>
+      <input type="email" name="bankName" class="form-control" id="inputEmail4" [(ngModel)]=benef.bank placeholder="Enter Bank Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="bankIFSC">Bank Branch</label> 
+      <input type="text" name="bankbranch" class="form-control" id="inputPassword4" [(ngModel)]=benef.branch placeholder="Enter Bank IFSC">
+    </div>
+  </div>  -->
+  <div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="inputState">Bank</label>
+            <select  class="form-control" name="bank" [(ngModel)]=benef.bank #bank="ngModel" required>
+                <option selected>Choose Bank</option>
+                <option>State Bank of India</option>
+                <option>Baroda Bank</option>
+                <option>Bank of India</option>
+                <option>ICICI Bank</option>
+                <option>BitBank</option>
+                
+            </select>
+    </div>
+    <div class="form-group col-md-6" >
+        <label for="inputState">Bank Branch</label>
+            <select class="form-control" name="branch" [(ngModel)]=benef.branch #branch="ngModel" required> 
+                <option selected>Choose Branch</option>
+                <option>Mumbai</option>
+                <option>NaviMumbai</option>
+                <option>Patna</option>
+                <option>Kolkata</option>
+                <option>Raipur</option>
+            </select>
+    </div>
+  </div> 
+  
+  <!-- <select name="occupationType" [(ngModel)]=benef.bank required #bank="ngModel">
+
+    <option selected disabled>Occupation Type</option>
+     <option value="Student" disabled>Occupation Type</option>
+     <option>Student</option> 
+    <option>IT Professional</option>
+    <option>Government Service</option>
+    <option>Retired</option>
+  </select> -->
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="accountNumber">Account Number</label>
+      <input type="text" name="accountNumber" class="form-control" id="inputEmail4" [(ngModel)]=benef.benefAccountNumber placeholder="Account Number">
+    </div>
+    <!-- <div class="form-group col-md-6">
+      <label for="confirmAccountNumber">Confirm Account Number</label>
+      <input type="text" name="confirmAccountNumber" class="form-control" id="inputPassword4" [(ngModel)]=benef.benef_accountNumber placeholder="Re-enter Account Number">
+    </div> -->
+  </div>
+  
+  <button type="submit" class="btn bf">Add Beneficiary</button>
+</form>
+
+</div>
+</div>
+</body>

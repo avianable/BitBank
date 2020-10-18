@@ -1,0 +1,61 @@
+<body style="background: url('../../assets/blur-abstract-background-260nw-742715635.webp') no-repeat center/cover; height: 100vh;">
+<nav id="navbar">
+  <h2 class="logo" >
+    <span style="color: #93bc52;" >
+      <i class="fas fa-university"> BitBank</i>
+    </span>
+    </h2>
+    <ul>
+      <li><a [routerLink]='["/dashboard2"]' style="text-decoration: none;">Dashboard</a></li>
+      
+      <li><a [routerLink]='["/home"]' style="text-decoration: none;">Logout</a></li>
+      
+      
+      
+    </ul>
+</nav>
+
+  <div class="card" style="width:80%;margin:auto; margin-top: 100px; ">
+  <div class="card-header bf" >
+    Transfer money 
+  </div>
+  <div class="card-body">
+  <form (ngSubmit)='sendmoney()'>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Beneficiary Name</label>
+        <label type="email" class="form-control" id="inputEmail4" value="">{{beneficiary.firstName}}</label>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Amount ( ₹ )</label>
+        <input id="amount"  placeholder=" Enter Amount" type="number" step="any" min="0" max="10000" oninput="check(this)" [(ngModel)]=acctxn.txnAmount [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Bank Name</label>
+      <label type="email" class="form-control" id="inputEmail4" value="">{{beneficiary.bank}}</label>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Bank Branch</label> 
+      <label type="text" class="form-control" id="inputPassword4" value="">{{beneficiary.branch}}</label>
+    </div>
+  </div> 
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Account Number</label>
+      <label type="email" class="form-control" id="inputEmail4" value="">{{beneficiary.benefAccountNumber}}</label>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Remarks</label>
+      <input type="text" class="form-control" id="inputPassword4" placeholder="Mention Remarks" [(ngModel)]=acctxn.remarks [ngModelOptions]="{standalone: true}">
+    </div>
+  </div>
+  
+  <button type="submit"  class="btn bf">Confirm Payment</button>
+  <span>{{message}}</span>
+</form>
+
+</div>
+</div>
+</body>
